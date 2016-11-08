@@ -1,6 +1,6 @@
 #Net-SNMP
 
-[![Build Status](https://travis-ci.org/erezzarum/puppet-snmp.svg?branch=dev)](https://travis-ci.org/erezzarum/puppet-snmp)
+[![Build Status](https://travis-ci.org/erezzarum/puppet-snmp.svg?branch=master)](https://travis-ci.org/erezzarum/puppet-snmp)
 
 ####Table of Contents
 
