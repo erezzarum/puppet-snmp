@@ -4,7 +4,6 @@ AllCops:
   Include:
     - ./**/*.rb
   Exclude:
-    - files/**/*
     - vendor/**/*
     - .vendor/**/*
     - pkg/**/*
@@ -56,9 +55,6 @@ Style/AndOr:
 
 Style/RedundantSelf:
   Enabled: True
-
-Metrics/BlockLength:
-  Enabled: False
 
 # Method length is not necessarily an indicator of code quality
 Metrics/MethodLength:
@@ -496,7 +492,7 @@ Lint/UselessAssignment:
   Enabled: True
 
 Style/ClosingParenthesisIndentation:
-  Enabled: True
+  Enabled: False
 
 # RSpec
 
