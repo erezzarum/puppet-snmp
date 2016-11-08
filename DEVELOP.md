@@ -1,24 +1,29 @@
+**Please NOTE**
+I have decided to continue the work of this module here.
+I have seen alot of pull requests and issues being made on the original repository (https://github.com/razorsedge/puppet-snmp) which were not merged and decided to continue here.
+I am not deleting any feature branches being made, this will allow anyone with the original repository to apply those features (please note that some features could depend on other features).
+
 Contributing
 ------------
 
 normal
 
   1. [Fork](http://help.github.com/forking/) puppet-snmp
-  2. Create a topic branch against the develop branch `git checkout develop; git checkout -b my_branch`
+  2. Create a topic branch against the master branch `git checkout master; git checkout -b my_branch`
   3. Push to your branch `git push origin my_branch`
-  4. Create a [Pull Request](http://help.github.com/pull-requests/) from your branch against the develop branch
+  4. Create a [Pull Request](http://help.github.com/pull-requests/) from your branch against the master branch
 
 [git-flow](https://github.com/nvie/gitflow)
 
   1. [Fork](http://help.github.com/forking/) puppet-snmp
   2. Create a feature `git flow feature start my-feature`
   3. Publish your featue `git flow feature publish my-feature`
-  4. Create a [Pull Request](http://help.github.com/pull-requests/) from your branch against the develop branch
+  4. Create a [Pull Request](http://help.github.com/pull-requests/) from your branch against the master branch
 
 Testing
 -------
 
-Tests are written with [rspec-puppet](http://rspec-puppet.com/). CI is covered by [Travis CI](http://about.travis-ci.org/) and the current status is visible [here](http://travis-ci.org/razorsedge/puppet-snmp).
+Tests are written with [rspec-puppet](http://rspec-puppet.com/). CI is covered by [Travis CI](http://about.travis-ci.org/) and the current status is visible [here](http://travis-ci.org/erezzarum/puppet-snmp).
 
 To run all tests:
 
@@ -31,8 +36,7 @@ This repository is organized and maintained with the help of [gitflow](https://g
 
 We use the following naming convention for branches:
 
-* develop (during development)
-* master (will be or has been released)
+* master (latest development)
 * feature/<name> (feature branches)
 * release/<name> (release branches)
 * hotfix/<name> (hotfix branches)
