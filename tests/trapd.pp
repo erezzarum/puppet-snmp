@@ -1,4 +1,4 @@
-class { 'snmp':
+class { '::snmp':
   ro_community        => 'SeCrEt',
   service_ensure      => 'stopped',
   trap_service_ensure => 'running',

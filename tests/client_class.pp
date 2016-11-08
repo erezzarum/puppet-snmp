@@ -1,4 +1,4 @@
-class { 'snmp::client':
+class { '::snmp::client':
   snmp_config => [
     'defVersion 2c',
     'defCommunity public',

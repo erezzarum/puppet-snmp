@@ -1,1 +1,1 @@
-include snmp::client
+include ::snmp::client
