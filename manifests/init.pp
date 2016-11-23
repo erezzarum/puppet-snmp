@@ -94,6 +94,24 @@
 #   See http://www.net-snmp.org/docs/man/snmpd.conf.html#lbAL for details.
 #   Default: [ 'notConfigGroup "" any noauth exact systemview none none' ]
 #
+# [*agentx*]
+#   Enable/Disable the AgentX functionality (true|false)
+#   Default: false
+#
+# [*agentx_socket*]
+#   An array that defines the address the master agent listens at
+#   Default: [ '/var/agentx/master' ]
+#
+# [*agentx_timeout*]
+#   A string that defines the timeout period for an AgentX request.
+#   Specified with a suffix of one of s (for seconds), m (for minutes),
+#   h (for hours), d (for days), or w (for weeks).
+#   Default: 1s
+#
+# [*agentx_retries*]
+#   An integer that defines the number of retries for an AgentX request.
+#   Default: 5
+#
 # [*dlmod*]
 #   Array of dlmod lines to add to the snmpd.conf file.
 #   Must provide NAME and PATH (ex. "cmaX /usr/lib64/libcmaX64.so").
@@ -274,6 +292,10 @@ class snmp (
   $groups                  = $snmp::params::groups,
   $views                   = $snmp::params::views,
   $accesses                = $snmp::params::accesses,
+  $agentx                  = $snmp::params::agentx,
+  $agentx_socket           = $snmp::params::agentx_socket,
+  $agentx_timeout          = $snmp::params::agentx_timeout,
+  $agentx_retries          = $snmp::params::agentx_retries,
   $dlmod                   = $snmp::params::dlmod,
   $snmpd_config            = $snmp::params::snmpd_config,
   $disable_authorization   = $snmp::params::disable_authorization,
@@ -304,12 +326,19 @@ class snmp (
   $openmanage_enable       = $snmp::params::openmanage_enable,
 ) inherits snmp::params {
   # Validate our booleans
+  validate_bool($agentx)
   validate_bool($manage_client)
   validate_bool($autoupgrade)
   validate_bool($service_enable)
   validate_bool($service_hasstatus)
   validate_bool($service_hasrestart)
   validate_bool($openmanage_enable)
+
+  # Validate our strings
+  validate_string($agentx_timeout)
+
+  # Validate our integers
+  validate_integer($agentx_retries)
 
   # Validate our arrays
   validate_array($snmptrapdaddr)
@@ -321,6 +350,7 @@ class snmp (
   validate_array($groups)
   validate_array($views)
   validate_array($accesses)
+  validate_array($agentx_socket)
   validate_array($dlmod)
   validate_array($snmpd_config)
   validate_array($snmptrapd_config)
