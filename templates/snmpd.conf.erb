@@ -9,6 +9,15 @@
 agentaddress <%= @agentaddress.join(',') %>
 <% end -%>
 
+<% if @agentx -%>
+# ------------------------------------------------------------------------------
+# AgentX Sub-Agents
+master agentx
+agentXSocket <%= @agentx_socket.join(',') %>
+agentXTimeout <%= @agentx_timeout %>
+agentXRetries <%= @agentx_retries %>
+<% end -%>
+
 ################################################################################
 # ACCESS CONTROL
 

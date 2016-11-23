@@ -47,6 +47,10 @@ class snmp::params {
   $accesses                 = [
     'notConfigGroup ""      any       noauth    exact  systemview none  none',
   ]
+  $agentx                   = false
+  $agentx_socket            = [ '/var/agentx/master' ]
+  $agentx_timeout           = '1s'
+  $agentx_retries           = 5
   $dlmod                    = []
   $disable_authorization    = 'no'
   $do_not_log_traps         = 'no'
